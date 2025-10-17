@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import './features/home/screens/homePage.dart';
 import './features/auth/screens/welcomePage.dart';
 
 void main() {
@@ -13,10 +12,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Página home',
+      title: 'Página de boas-vindas',
       theme: ThemeData(primarySwatch: Colors.indigo),
-      initialRoute: '/HomePage', // 👈 Define a tela inicial
-      routes: {'/HomePage': (context) => const HomePage()},
+      initialRoute: '/WelcomePage',
+      routes: {'/WelcomePage': (context) => const WelcomePage()},
     );
   }
 }

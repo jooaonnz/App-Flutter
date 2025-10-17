@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './features/home/screens/homePage.dart';
+import './features/auth/screens/welcomePage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,8 +15,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Página home',
       theme: ThemeData(primarySwatch: Colors.indigo),
-      initialRoute: '/PageHome', // 👈 Define a tela inicial
-      routes: {'/PageHome': (context) => const HomePage()},
+      initialRoute: '/HomePage', // 👈 Define a tela inicial
+      routes: {'/HomePage': (context) => const HomePage()},
     );
   }
 }

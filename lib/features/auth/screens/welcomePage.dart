@@ -13,12 +13,17 @@ class WelcomePage extends StatelessWidget {
             const Text('Seja bem vindo!'),
             const SizedBox(height: 20), // espaço entre texto e botão
             ElevatedButton(
-              style: ElevatedButton.styleFrom(),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Color(0xFFD49100),
+              ),
               onPressed: () {
                 // ação quando o botão for pressionado
                 print('Botão pressionado!');
               },
-              child: const Text('Iniciar cadastro'),
+              child: const Text(
+                'Iniciar cadastro',
+                style: TextStyle(fontSize: 16, color: Color(0xFFFFFFFF)),
+              ),
             ),
           ],
         ),

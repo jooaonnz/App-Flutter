@@ -6,10 +6,22 @@ class WelcomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Seja bem vindo!')),
-      body: const ElevatedButton(
-        onPressed: null,
-        child: const Text('Iniciar cadastro'),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center, // centraliza na tela
+          children: [
+            const Text('Seja bem vindo!'),
+            const SizedBox(height: 20), // espaço entre texto e botão
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(),
+              onPressed: () {
+                // ação quando o botão for pressionado
+                print('Botão pressionado!');
+              },
+              child: const Text('Iniciar cadastro'),
+            ),
+          ],
+        ),
       ),
     );
   }

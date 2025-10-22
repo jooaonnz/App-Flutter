@@ -18,9 +18,16 @@ class Login extends StatefulWidget {
       super.dispose();
     }
 
-
     @override    
     Widget build(BuildContext context) {
+
+      final labelStyle = TextStyle(
+        color: Color(0xFFD49100),
+        fontFamily: 'Poppins',
+        fontWeight: FontWeight.w100,
+        fontSize: 12,
+      );
+
     return Scaffold(
       appBar: AppBar( 
         backgroundColor: Color(0xFFFFFFFF),
@@ -43,7 +50,6 @@ class Login extends StatefulWidget {
 
         ),
         ),
-
       backgroundColor: Color(0xFFFFFFFF),
       body: Center(
         child: Column(
@@ -51,7 +57,81 @@ class Login extends StatefulWidget {
           children: [
             const Text('Informações de acesso',  style: TextStyle(fontFamily: 'Poppins', fontSize: 26.0 , fontWeight: FontWeight.w500), ),
             const SizedBox(height: 90), // espaço entre texto e botão
-            // espaço para form
+            
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 56),
+                child: Form(
+                  key: _formKey,
+                  child: Column(
+
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                        Text('Email', style: labelStyle,),
+                        Container(
+                          decoration: BoxDecoration(
+                            color: Color(0xFF000000),
+                            borderRadius: BorderRadius.circular(20),
+                            boxShadow:[
+                              BoxShadow(
+                                color: Colors.black.withOpacity(0.2),
+                                blurRadius: 8,
+                                offset: const Offset(0,4),
+                              ),
+                            ]
+                          ),
+                          
+
+                       child: TextFormField(
+                            decoration: InputDecoration(
+                            filled: true,
+                            fillColor: Color(0xFFFDFCFB ),
+                            enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+                            borderSide: const BorderSide(color: Color(0xFFFDFCFB),
+                            width: 0
+                            ),
+                            ),
+                          ),
+                        ),
+                        ),
+                        SizedBox(height: 44),
+
+                        Text('Número', style: labelStyle,),
+                        TextFormField(
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10),
+                              borderSide: const BorderSide(color: Color(0xFFFDFCFB))
+                            ),
+                          ),
+                        ),
+                        SizedBox(height: 44),
+                        
+                        Text('Criar senha', style: labelStyle,),
+                        TextField(
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+                            borderSide: const BorderSide(color: Color(0xFFFDFCFB))
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 44),
+
+                      Text('Confirmar senha', style: labelStyle,),
+                      TextFormField(
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+                            borderSide: const BorderSide(color: Color(0xFFFDFCFB))
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                  ),
+               ),
+               SizedBox(height:100 ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: Color(0xFFD49100),

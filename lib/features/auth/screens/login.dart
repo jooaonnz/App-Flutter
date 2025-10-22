@@ -1,11 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:tela_de_cadastro/features/auth/screens/welcomePage.dart';
 
-class Login extends StatelessWidget {
+class Login extends StatefulWidget {
   const Login({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  State<Login> createState() => _LoginState();
+  }
+  
+  class _LoginState extends State<Login>{
+    final TextEditingController _textController = TextEditingController();
+    final _formKey = GlobalKey<FormState>();
+
+    @override
+    void dispose(){
+      _textController.dispose();
+      super.dispose();
+    }
+
+
+    @override    
+    Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar( 
         backgroundColor: Color(0xFFFFFFFF),
@@ -61,3 +76,5 @@ class Login extends StatelessWidget {
     );
   }
 }
+      
+  
